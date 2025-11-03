@@ -67,13 +67,13 @@ function App() {
 
   return (
     <>
-      <h1 style={{textAlign: "center"}}>{title}</h1>
-      <div style={{height: "100vh", width: "100vw"}}>
-        {data ?
-          <Excalidraw initialData={data} viewModeEnabled={presentationMode}/>
+       {data ?
+          <Excalidraw
+            initialData={data}
+            viewModeEnabled={presentationMode}
+          />
           : <p>Loading ...</p>
         }
-      </div>
     </>
   );
 }
