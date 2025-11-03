@@ -1,0 +1,33 @@
+{
+  "name": "vanity-market-docs",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.tsx",
+  "module": "src/index.tsx",
+  "scripts": {
+    "dev": "bun --hot src/index.tsx",
+    "build": "bun build ./src/index.html --outdir=dist --sourcemap --target=browser --minify --define:process.env.NODE_ENV='\"production\"' --env='BUN_PUBLIC_*'",
+    "deploy:ftp": "bun deploy.ts",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --ext .ts,.tsx",
+    "start": "NODE_ENV=production bun src/index.tsx"
+  },
+  "dependencies": {
+    "motion": "^12.23.24",
+    "react": "^19",
+    "react-dom": "^19"
+  },
+  "devDependencies": {
+    "dotenv": "^16.5.0",
+    "@types/bun": "latest",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "basic-ftp": "^5.0.5",
+    "prettier": "^3.6.2",
+    "eslint": "^9.38.0",
+    "typescript-eslint": "^8.46.1",
+    "typescript": "^5.9.3"
+  }
+}

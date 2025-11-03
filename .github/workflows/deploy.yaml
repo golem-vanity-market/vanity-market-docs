@@ -1,0 +1,33 @@
+name: Publish the package (snapshot) to FTP server
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  cli:
+    name: "Publish CLI package to FTP server"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: |
+          bun install
+
+      - name: Build website
+        run: |
+          bun run build
+
+      - name: Publish to FTP server
+        run: |
+          bun run deploy:ftp
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
