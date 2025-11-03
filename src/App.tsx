@@ -1,10 +1,8 @@
 import React from "react";
-import {Excalidraw} from "@excalidraw/excalidraw"; // your saved Excalidraw data
+import { Excalidraw } from "@excalidraw/excalidraw"; // your saved Excalidraw data
 import "@excalidraw/excalidraw/index.css";
-import jsonData from "./example.excalidraw.json"
-import {ExcalidrawInitialDataState} from "@excalidraw/excalidraw/types";
-
-
+import jsonData from "./example.excalidraw.json";
+import { ExcalidrawInitialDataState } from "@excalidraw/excalidraw/types";
 
 function App() {
   return (
