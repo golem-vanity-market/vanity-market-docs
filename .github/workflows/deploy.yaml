@@ -23,11 +23,3 @@ jobs:
       - name: Build website
         run: |
           bun run build
-
-      - name: Publish to FTP server
-        run: |
-          bun run deploy:ftp
-        env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
