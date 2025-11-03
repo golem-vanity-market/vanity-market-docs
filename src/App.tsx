@@ -1,13 +1,15 @@
 import React, {useEffect} from "react";
 import {Excalidraw} from "@excalidraw/excalidraw"; // your saved Excalidraw data
 import "@excalidraw/excalidraw/index.css";
-import jsonData from "./example.excalidraw.json";
 import {ExcalidrawInitialDataState} from "@excalidraw/excalidraw/types";
+import plot from "./main-plot.excalidraw.json";
 
 function App() {
   const [data, setData] = React.useState<ExcalidrawInitialDataState | null>(null);
   const [presentationMode, setPresentationMode] = React.useState<boolean>(false);
   const [title, setTitle] = React.useState<string>("Excalidraw Viewer");
+
+
 
 
   const initialData = async () => {
@@ -30,7 +32,7 @@ function App() {
     let presentationMode = false;
     if (!fileParam) {
       return {
-        "data": jsonData as unknown as ExcalidrawInitialDataState,
+        "data": plot as unknown as ExcalidrawInitialDataState,
         "presentationMode": presentationMode
       }
     }
@@ -71,6 +73,7 @@ function App() {
           <Excalidraw
             initialData={data}
             viewModeEnabled={presentationMode}
+
           />
           : <p>Loading ...</p>
         }
